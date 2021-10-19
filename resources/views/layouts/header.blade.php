@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="assets\css\animate.min.css">
     <link rel="stylesheet" href="assets\css\rateit.css">
     <link rel="stylesheet" href="assets\css\bootstrap-select.min.css">
-
+    
     <!-- Icons/Glyphs -->
     <link rel="stylesheet" href="assets\css\font-awesome.css">
 
@@ -64,13 +64,16 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                logout
                   <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
+                                                     
                     {{ __('Logout') }}
                   </a>
 
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
+                    
                   </form>
                 </div>
               </li>
@@ -187,148 +190,31 @@
                 <ul class="nav navbar-nav">
                   <li class="active dropdown yamm-fw"> <a href="{{ route('home') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">trang chủ</a> </li>
                   
-                  <li class="dropdown "> <a href="{{ route('home') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">điện thoại</a>
+                  @foreach($info as $value)
+                  <li class="dropdown "> <a href="{{ route('home') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">{{$value->tenloaihang}}</a>
                     <ul class="dropdown-menu pages">
                       <li>
                         <div class="yamm-content ">
                           <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
-                              <h2 class="title">điện thoại</h2>
+                              <h2 class="title">{{$value->tenloaihang}}</h2>
                               <ul class="links">
-                                <li><a href="#">apple</a></li>
-                                <li><a href="#">samsung </a></li>
-                                <li><a href="#">xiaomi</a></li>
-                                <li><a href="#">oppo</a></li>
-                                <li><a href="#">nokia</a></li>
+                                @foreach($list[$value->maloaihang] as $loai)
 
+                                <li><a href="#">{{$loai}}</a></li>
+                                
+                                @endforeach
                               </ul>
                             </div>
 
-
-                            <!-- /.yamm-content -->
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown ">
-                    <a href="category.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">máy tính <!-- <span class="menu-label hot-menu hidden-xs">hot</span>--> </a>
-                    <ul class="dropdown-menu pages">
-                      <li>
-                        <div class="yamm-content">
-                          <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
-                              <h2 class="title">máy tính</h2>
-                              <ul class="links">
-                                <li><a href="#">dell</a></li>
-                                <li><a href="#">mac</a></li>
-                                <li><a href="#">hp </a></li>
-                                <li><a href="#">asus</a></li>
-                                <li><a href="#">acer</a></li>
-                                <li><a href="#">msi</a></li>
-
-                              </ul>
-                            </div>
 
                             
-
-                          </div>
-                          <!-- /.row -->
-                        </div>
-                        <!-- /.yamm-content -->
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown"> <a href="category.html"data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">tablet<!-- <span class="menu-label new-menu hidden-xs">new</span>--> </a>
-                    <ul class="dropdown-menu pages">
-                      <li>
-                        <div class="yamm-content">
-                          <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
-                              <h2 class="title">tablet</h2>
-                              <ul class="links">
-                                <li><a href="#">ipad pro</a></li>
-                                <li><a href="#">ipad air</a></li>
-                                <li><a href="#">ipad mini</a></li>
-                                <li><a href="#">samsung</a></li>
-
-                              </ul>
-                            </div>
                           </div>
                         </div>
                       </li>
                     </ul>
                   </li>
-                  <li class="dropdown "> <a href="category.html"data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">đông hồ</a>
-
-                    <ul class="dropdown-menu pages">
-                      <li>
-                        <div class="yamm-content">
-                          <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
-                              <h2 class="title">đồng hồ</h2>
-                              <ul class="links">
-                                <li><a href="#">apple watch </a></li>
-                                <li><a href="#">samsung</a></li>
-                                <li><a href="#">oppo</a></li>
-                                <li><a href="#">xiaomi</a></li>
-
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown "> <a href="contact.html"data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">phụ kiện</a>
-                    <ul class="dropdown-menu pages">
-                      <li>
-                        <div class="yamm-content">
-                          <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-2 col-menu">
-
-                              <h2 class="title">phụ kiện</h2>
-                              <ul class="links">
-                                <li><a href="#">tai nghe</a></li>
-                                <li><a href="#">loa</a></li>
-                                <li><a href="#">chuột</a></li>
-                                <li><a href="#">bàn phím</a></li>
-                                <li><a href="#">đế tản nhiệt</a></li>
-                                <li><a href="#">ốp lưng</a></li>
-                                <li><a href="#">sạc dự phòng</a></li>
-                                <li><a href="#">sạc điện thoại</a></li>
-
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown "> <a href="contact.html"data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">máy ảnh</a>
-                    <ul class="dropdown-menu pages">
-                      <li>
-                        <div class="yamm-content">
-                          <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-2 col-menu">
-                              <h2 class="title">máy ảnh</h2>
-                              <ul class="links">
-                                <li><a href="#">Accessories</a></li>
-                                <li><a href="#">Binoculars</a></li>
-                                <li><a href="#">Telescopes</a></li>
-                                <li><a href="#">Camcorders</a></li>
-                                <li><a href="#">Digital</a></li>
-
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-
-                  
-                  
+                  @endforeach
                 </ul>
                 <!-- /.navbar-nav -->
                 <div class="clearfix"></div>

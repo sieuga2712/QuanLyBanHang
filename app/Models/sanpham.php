@@ -9,6 +9,8 @@ class sanpham extends Model
     //
     protected $sanpham=[
         'mahang',
+        'maloai',
+        'manhasanxuat',
         'name',
         'gia',
         'soluong',
