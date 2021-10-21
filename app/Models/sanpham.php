@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use DB;
 class sanpham extends Model
 {
     //
@@ -16,4 +16,29 @@ class sanpham extends Model
         'soluong',
         'mota'
     ];
+
+    public static function get_loaihang(){
+        $re=DB::select('select maloaihang,tenloaihang from  loaihangs');
+        
+       return $re;
+
+    }
+    public static function get_hang(){
+        $re=DB::select('select maloaihang,tenloaihang from  loaihangs');
+        $na= array();
+        foreach($re as $i){
+            $na[$i->maloaihang]=sanpham::loai($i->maloaihang);
+        }
+       return $na;
+
+    }
+    public static function loai($l){
+        $na=DB::select('select manhasanxuat from  sanphams where maloai=? group by manhasanxuat',[$l]);
+        $a=array();
+        foreach($na as $n){
+            $a[]=$n->manhasanxuat;
+        }
+        return $a;
+       
+    }
 }

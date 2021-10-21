@@ -29,7 +29,8 @@ Route::get('/1',function(){
     
     
 });
-Route::get('/','ItemMenuController@view');
+//Route::get('/','ItemMenuController@view');
+
 // lay ban ghi theo id: db::table('user')->where('id',1)
 // lay ban ghi theo truong: db::table('user')->where('name',"asdasd")
 // lay 1 truong nhat dinh cua 1 ban ghi: db::table('user')->where('id',1)->value("email");

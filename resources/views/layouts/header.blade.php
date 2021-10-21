@@ -16,19 +16,19 @@
     <title>Flipmart premium HTML5 & CSS3 Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="assets\css\bootstrap.min.css">
+    <link rel="stylesheet" href="http://localhost:8000/assets\css\bootstrap.min.css">
 
     <!-- Customizable CSS -->
-    <link rel="stylesheet" href="assets\css\main.css">
-    <link rel="stylesheet" href="assets\css\blue.css">
-    <link rel="stylesheet" href="assets\css\owl.carousel.css">
-    <link rel="stylesheet" href="assets\css\owl.transitions.css">
-    <link rel="stylesheet" href="assets\css\animate.min.css">
-    <link rel="stylesheet" href="assets\css\rateit.css">
-    <link rel="stylesheet" href="assets\css\bootstrap-select.min.css">
+    <link rel="stylesheet" href="http://localhost:8000/assets\css\main.css">
+    <link rel="stylesheet" href="http://localhost:8000/assets\css\blue.css">
+    <link rel="stylesheet" href="http://localhost:8000/assets\css\owl.carousel.css">
+    <link rel="stylesheet" href="http://localhost:8000/assets\css\owl.transitions.css">
+    <link rel="stylesheet" href="http://localhost:8000/assets\css\animate.min.css">
+    <link rel="stylesheet" href="http://localhost:8000/assets\css\rateit.css">
+    <link rel="stylesheet" href="http://localhost:8000/assets\css\bootstrap-select.min.css">
     
     <!-- Icons/Glyphs -->
-    <link rel="stylesheet" href="assets\css\font-awesome.css">
+    <link rel="stylesheet" href="http://localhost:8000/assets\css\font-awesome.css">
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
@@ -97,7 +97,7 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
             <!-- ============================================================= LOGO ============================================================= -->
-            <div class="logo"> <a href="home.html"> <img width="190" height="90" src="assets/images/logo.png" alt="logo"> </a> </div>
+            <div class="logo"> <a href="home.html"> <img width="190" height="90" src="http://localhost:8000/assets/images/logo.png" alt="logo"> </a> </div>
             <!-- /.logo -->
             <!-- ============================================================= LOGO : END ============================================================= -->
           </div>
@@ -137,7 +137,7 @@
                   <div class="cart-item product-summary">
                     <div class="row">
                       <div class="col-xs-4">
-                        <div class="image"> <a href="detail.html"><img src="assets\images\cart.jpg" alt=""></a> </div>
+                        <div class="image"> <a href="detail.html"><img src="http://localhost:8000/assets\images\cart.jpg" alt=""></a> </div>
                       </div>
                       <div class="col-xs-7">
                         <h3 class="name"><a href="index.php?page-detail">Simple Product</a></h3>
@@ -190,6 +190,11 @@
                 <ul class="nav navbar-nav">
                   <li class="active dropdown yamm-fw"> <a href="{{ route('home') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">trang chủ</a> </li>
                   
+                  @php 
+
+                  $info=\App\Models\sanpham::get_loaihang();
+                  $list=\App\Models\sanpham::get_hang();
+                  @endphp
                   @foreach($info as $value)
                   <li class="dropdown "> <a href="{{ route('home') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">{{$value->tenloaihang}}</a>
                     <ul class="dropdown-menu pages">
