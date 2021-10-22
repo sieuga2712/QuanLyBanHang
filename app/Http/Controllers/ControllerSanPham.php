@@ -15,7 +15,7 @@ class ControllerSanPham extends Controller
     //
     public function themsanpham()
     {
-        for ($i = 5; $i < 13; $i++) {
+        for ($i = 13; $i < 18; $i++) {
             $sanpham = new sanpham;
             $ten = "iphone " . $i;
             $sanpham->mahang = "DT_IP_" . $i;
@@ -27,7 +27,7 @@ class ControllerSanPham extends Controller
             $sanpham->mota = "dien thoai iphone " . $i;
             $sanpham->save();
         }
-        for ($i = 1; $i < 10; $i++) {
+        for ($i = 10; $i < 16; $i++) {
             $sanpham = new sanpham;
             $ten = "samsung " . $i;
             $sanpham->mahang = "DT_SS_" . $i;
@@ -39,7 +39,7 @@ class ControllerSanPham extends Controller
             $sanpham->mota = "dien thoai samsung " . $i;
             $sanpham->save();
         }
-        for ($i = 1; $i < 10; $i++) {
+        for ($i = 10; $i < 16; $i++) {
             $sanpham = new sanpham;
             $ten = "xiaomi " . $i;
             $sanpham->mahang = "DT_XM_" . $i;
@@ -52,7 +52,7 @@ class ControllerSanPham extends Controller
             $sanpham->save();
         }
         $na = "oppo";
-        for ($i = 1; $i < 10; $i++) {
+        for ($i = 10; $i < 16; $i++) {
             $sanpham = new sanpham;
             $ten = $na . " " . $i;
             $sanpham->mahang = "DT_oppo_" . $i;
@@ -65,7 +65,7 @@ class ControllerSanPham extends Controller
             $sanpham->save();
         }
         $na = "nokia";
-        for ($i = 1; $i < 10; $i++) {
+        for ($i = 10; $i < 16; $i++) {
             $sanpham = new sanpham;
             $ten = $na . " " . $i;
             $sanpham->mahang = "DT_nokia_" . $i;
@@ -79,7 +79,7 @@ class ControllerSanPham extends Controller
         }
         $nam = array("dell", "mac", "hp", "asus", "msi");
         foreach ($nam as $n) {
-            for ($i = 1; $i < 5; $i++) {
+            for ($i = 5; $i < 15; $i++) {
                 $sanpham = new sanpham;
                 $ten = $na . " " . $i;
                 $sanpham->mahang = "LAP_" . $n . "_" . $i;
@@ -94,7 +94,7 @@ class ControllerSanPham extends Controller
         }
         $nam = array("apple", "samsung");
         foreach ($nam as $n) {
-            for ($i = 1; $i < 5; $i++) {
+            for ($i = 5; $i < 15; $i++) {
                 $sanpham = new sanpham;
                 $ten = $na . " " . $i;
                 $sanpham->mahang = "TAB_" . $n . "_" . $i;
@@ -108,7 +108,7 @@ class ControllerSanPham extends Controller
             }
         }
             $na="apple watch";
-            for ($i = 1; $i < 5; $i++) {
+            for ($i = 5; $i < 15; $i++) {
                 $sanpham = new sanpham;
                 $ten = $na . " " . $i;
                 $sanpham->mahang = "SMW_AW_" . $i;
@@ -121,7 +121,7 @@ class ControllerSanPham extends Controller
                 $sanpham->save();
             }
             $na="samsung";
-            for ($i = 1; $i < 5; $i++) {
+            for ($i = 5; $i < 15; $i++) {
                 $sanpham = new sanpham;
                 $ten = $na . " " . $i;
                 $sanpham->mahang = "SMW_SSW_" . $i;
@@ -134,7 +134,7 @@ class ControllerSanPham extends Controller
                 $sanpham->save();
             }
             $na="xiaomi";
-            for ($i = 1; $i < 5; $i++) {
+            for ($i = 5; $i < 15; $i++) {
                 $sanpham = new sanpham;
                 $ten = $na . " " . $i;
                 $sanpham->mahang = "SMW_XMW_" . $i;
@@ -148,7 +148,7 @@ class ControllerSanPham extends Controller
             }
             $nam = array("accessories", "binoculars","digital");
             foreach ($nam as $n) {
-                for ($i = 1; $i < 5; $i++) {
+                for ($i = 5; $i < 15; $i++) {
                     $sanpham = new sanpham;
                     $ten = $na . " " . $i;
                     $sanpham->mahang = "CAM_" . $n . "_" . $i;
