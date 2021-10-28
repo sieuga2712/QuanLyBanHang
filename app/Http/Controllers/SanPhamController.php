@@ -163,4 +163,30 @@ class ControllerSanPham extends Controller
             }
         
     }
+
+    public function index($maloaihang, $manhasanxuat)
+    {
+        $sanpham =  DB::select('select * from sanphams where  maloai=? and manhasanxuat =?',[$maloaihang,$manhasanxuat]);
+        return view('product.index',['sanpham'=> $sanpham]);  
+    }  
+    public function indexs($maloaihang)
+    {
+        $sanpham = DB::select('select * from sanphams where  maloai=?',[$maloaihang]);
+        return view('product.index',['sanpham'=> $sanpham]);  
+    }  
+
+    public function detail($mahang,$id)
+    {
+        $sanpham = sanpham::Find($id);
+        $ListRelatedProduct =\App\Models\sanpham::get_ListRelatedProduct($id,15); 
+        return view('product.detail',['sanpham'=> $sanpham, 'ListRelatedProduct'=> $ListRelatedProduct]);     
+    } 
+       
+    public function search($inf)
+    {      
+        $sanpham = DB:: select("select * from sanphams, loaihangs, nhasanxuats
+        where sanphams.maloai = loaihangs.maloaihang and sanphams.manhasanxuat = nhasanxuats.manhasanxuat 
+        and sanphams.name like '%?%' or loaihangs.tenloaihang like '%?%' or nhasanxuats.tennhasanxuat like '%?%' " , [$inf,$inf,$inf]);
+         return view('product.search',['sanpham'=> $sanpham]);
+    }  
 }

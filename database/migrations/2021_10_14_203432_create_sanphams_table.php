@@ -18,6 +18,7 @@ class CreateSanphamsTable extends Migration
             $table->string('mahang');
             $table->string("maloai");
             $table->string("manhasanxuat");
+            
             $table->string("name",50);
             $table->integer("dongia");
             $table->integer("soluong");

@@ -19,9 +19,23 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/tao','ControllerSanPham@view');
+Route::get('/tao','SanPhamController@view');
 Route::get('/taokk','KhuyenmaiController@view');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/listcart', 'listcart@view');
+Route::get('/addcart/{id}','CartController@addcart');
+Route::get('/delcart/{id}','CartController@deletecart');
+Route::get('/viewcart','CartController@viewcart');
+Route::get('/shoppingdelcart/{id}','listcart@deletecart');
+
+
+//Route::get('/{mahang}-{id}', 'SanPhamController@detail')->name('detail');
+Route::get('/chi-tiet/{mahang}-{id}', 'SanPhamController@detail')->name('detail');
+Route::get('/{maloaihang}/{manhasanxuat}', 'SanPhamController@index')->name('index');
+Route::get('/{maloaihang}', 'SanPhamController@indexs')->name('index');
+Route::get('/home', 'HomeController@index')->name('home');
+
+
 Route::get('/1',function(){
     $result=App\Models\sanpham::all()->toArray();
     echo "<pre>";

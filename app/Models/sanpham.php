@@ -14,7 +14,8 @@ class sanpham extends Model
         'name',
         'gia',
         'soluong',
-        'mota'
+        'mota',
+        'image'
     ];
 
     public static function get_loaihang(){

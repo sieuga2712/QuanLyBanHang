@@ -387,7 +387,7 @@ $list=\App\Models\sanpham::get_hang();
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="detail.html"><img src="assets\images\products\p1.jpg" alt=""></a> </div>
+                          <div class="image"> <a href="detail.html"><img src="assets\\images\\sanpham\\{{$value->maloai}}\\{{$value->maloai}}_{{$value->manhasanxuat}}.png" alt=""></a> </div>
                           <!-- /.image -->
 
                           <div class="tag new"><span>new</span></div>
@@ -407,8 +407,10 @@ $list=\App\Models\sanpham::get_hang();
                           <div class="action">
                             <ul class="list-unstyled">
                               <li class="add-cart-button btn-group">
+                              <a onclick="addcart('{{$value->mahang}}')" href="javascript:">
                                 <button data-toggle="tooltip" class="btn btn-primary icon" type="button" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </button>
                                 <button class="btn btn-primary cart-btn" type="button">thêm vào giỏ</button>
+                              </a>
                               </li>
                               <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
                               <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
@@ -449,7 +451,7 @@ $list=\App\Models\sanpham::get_hang();
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="detail.html"><img src="assets\images\products\p1.jpg" alt=""></a> </div>
+                          <div class="image"> <a href="detail.html"><img src="assets\\images\\sanpham\\{{$value->maloai}}\\{{$value->maloai}}_{{$value->manhasanxuat}}.png" alt=""></a> </div>
                           <!-- /.image -->
 
                           <div class="tag new"><span>new</span></div>
@@ -469,8 +471,10 @@ $list=\App\Models\sanpham::get_hang();
                           <div class="action">
                             <ul class="list-unstyled">
                               <li class="add-cart-button btn-group">
+                              <a onclick="addcart('{{$value->mahang}}')" href="javascript:">
                                 <button data-toggle="tooltip" class="btn btn-primary icon" type="button" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </button>
                                 <button class="btn btn-primary cart-btn" type="button">thêm vào giỏ</button>
+                              </a>
                               </li>
                               <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
                               <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
@@ -512,8 +516,9 @@ $list=\App\Models\sanpham::get_hang();
         <!-- /.scroll-tabs -->
         <!-- ============================================== SCROLL TABS : END ============================================== -->
 
-
-
+        
+        
+      
 
       </div>
       <!-- /.homebanner-holder -->

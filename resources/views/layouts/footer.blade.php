@@ -139,5 +139,63 @@
 <script src="assets\js\bootstrap-select.min.js"></script> 
 <script src="assets\js\wow.min.js"></script> 
 <script src="assets\js\scripts.js"></script>
+<script type="text/javascript">
+          function addcart(id){
+          $.ajax(
+            {
+              url:'/addcart/'+id,
+              type:'GET',
+
+            }
+          ).done(function(Response){
+              
+              $("#changcart").empty();
+              $("#changcart").html(Response);
+          });
+        };
+        $("#changcart").on("click",".delete_product i",function(){
+
+          
+          $.ajax(
+            {
+              url:'/delcart/'+$(this).data("id"),
+              type:'GET',
+
+            }
+          ).done(function(Response){
+              
+              $("#changcart").empty();
+              $("#changcart").html(Response);
+          });
+        });
+
+      $("#shoppingcart").on("click",".remo i",function(){
+   
+$.ajax(
+  {
+    url:'/shoppingdelcart/'+$(this).data("id"),
+    type:'GET',
+
+  }
+).done(function(Response){
+    
+    $("#shoppingcart").empty();
+    $("#shoppingcart").html(Response);
+});
+$.ajax(
+            {
+              url:'/viewcart',
+              type:'GET',
+
+            }
+          ).done(function(Response){
+              
+              $("#changcart").empty();
+              $("#changcart").html(Response);
+          });
+
+});
+
+</script>
 </body>
 </html>
