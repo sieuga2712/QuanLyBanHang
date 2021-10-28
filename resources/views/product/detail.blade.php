@@ -11,9 +11,9 @@
 
         <div id="owl-single-product">
             <div class="single-product-gallery-item" id="slide1">
-                <a data-lightbox="image-1" data-title="Gallery" href="{{$sanpham->image}}">
-                    <img class="img-responsive" alt="" src="assets\images\blank.gif" data-echo="assets/images/products/p8.jpg">
-                </a>
+                
+                    <img class="img-responsive" alt="" src="http://localhost:8000/{{$sanpham[0]->image}}" >
+                
             </div><!-- /.single-product-gallery-item -->
 
            <!-- /.single-product-gallery-item -->
@@ -24,7 +24,7 @@
 </div><!-- /.gallery-holder -->        			
 					<div class='col-sm-6 col-md-7 product-info-block'>
 						<div class="product-info">
-							<h1 class="name">{{$sanpham->name}}</h1>
+							<h1 class="name">{{$sanpham[0]->name}}</h1>
 							
 							<div class="rating-reviews m-t-20">
 								<div class="row">
@@ -64,7 +64,7 @@
 
 									<div class="col-sm-6">
 										<div class="price-box">
-											<span class="price">{{$sanpham->dongia}}</span>
+											<span class="price">{{$sanpham[0]->dongia}}</span>
 											<span class="price-strike">$900.00</span>
 										</div>
 									</div>
@@ -138,7 +138,7 @@
 								
 								<div id="description" class="tab-pane in active">
 									<div class="product-tab">
-										<p class="text">{{$sanpham->mota}}</p>
+										<p class="text">{{$sanpham[0]->mota}}</p>
 									</div>	
 								</div><!-- /.tab-pane -->
 
@@ -223,7 +223,7 @@
 	<h3 class="section-title">upsell products</h3>
 	<div class="owl-carousel home-owl-carousel upsell-product custom-carousel owl-theme outer-top-xs">
 	@foreach($ListRelatedProduct as $value)
-		<div class="item item-carousel">
+		<div class="item item-carousel" style="width:125px;">
 			<div class="products">
 
 				<div class="product">		

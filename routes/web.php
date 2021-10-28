@@ -37,7 +37,7 @@ Route::get('/shoppingasccart/{id}','listcart@asccart');
 
 
 //Route::get('/{mahang}-{id}', 'SanPhamController@detail')->name('detail');
-Route::get('/chi-tiet/{mahang}-{id}', 'SanPhamController@detail')->name('detail');
+Route::get('/chi-tiet/{id}', 'SanPhamController@detail')->name('detail');
 Route::get('/{maloaihang}/{manhasanxuat}', 'SanPhamController@index')->name('index');
 Route::get('/{maloaihang}', 'SanPhamController@indexs')->name('index');
 Route::get('/home', 'HomeController@index')->name('home');

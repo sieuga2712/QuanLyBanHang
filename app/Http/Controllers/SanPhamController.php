@@ -180,10 +180,9 @@ class SanPhamController extends Controller
         return view('product.index',['sanpham'=> $sanpham]);  
     }  
 
-    public function detail($mahang)
-    {
-        $sanpham = sanpham::Find($mahang);
-        $ListRelatedProduct =\App\Models\sanpham::get_ListRelatedProduct($sanpham->maloai); 
+    public function detail($id)
+    {   $sanpham = DB::select('select * from sanphams where  mahang=?',[$id]);
+        $ListRelatedProduct =\App\Models\sanpham::get_ListRelatedProduct($id,7); 
         return view('product.detail',['sanpham'=> $sanpham, 'ListRelatedProduct'=> $ListRelatedProduct]);     
     } 
        

@@ -64,7 +64,9 @@ class sanpham extends Model
     }
     public static function get_ListRelatedProduct($id, $count)
     {
-        $product = sanpham::find($id);
-        return sanpham::where('maloai',$product->maloai)->orderBy('created_at', 'desc')->limit($count)->get();
+        $product = DB::table('sanphams')->select('maloai')->where('mahang',$id)->get();
+        $p=$product[0]->maloai;
+        $listpro= DB::select('select * from  sanphams where maloai="'.$p.'"  limit 7;');
+        return $listpro;
     }
 }
