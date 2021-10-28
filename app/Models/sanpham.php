@@ -62,4 +62,9 @@ class sanpham extends Model
         
         return $re;
     }
+    public static function get_ListRelatedProduct($id, $count)
+    {
+        $product = sanpham::find($id);
+        return sanpham::where('maloai',$product->maloai)->orderBy('created_at', 'desc')->limit($count)->get();
+    }
 }

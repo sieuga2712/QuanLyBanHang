@@ -256,7 +256,7 @@
                   $list=\App\Models\sanpham::get_hang();
                   @endphp
                   @foreach($info as $value)
-                  <li class="dropdown "> <a href="{{ route('home') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">{{$value->tenloaihang}}</a>
+                  <li class="dropdown "> <a href="http://localhost:8000/{{$value->maloaihang}}" data-hover="dropdown" >{{$value->tenloaihang}}</a>
                     <ul class="dropdown-menu pages">
                       <li>
                         <div class="yamm-content ">
@@ -266,7 +266,7 @@
                               <ul class="links">
                                 @foreach($list[$value->maloaihang] as $loai)
 
-                                <li><a href="#">{{$loai}}</a></li>
+                                <li><a href="/{{$value->maloaihang}}/{{$loai}}">{{$loai}}</a></li>
                                 
                                 @endforeach
                               </ul>

@@ -49,6 +49,43 @@ class CartController extends Controller
     public function viewcart(){
         return view('Layouts/Cart');
     }
+    public function descart(Request $req,$id){
+        
+            
+        $oldcart= Session("cart")?Session("cart"):null; 
+        $newcart= new cart($oldcart);
+        $newcart->des($id);
+       if(Count($newcart->product)>0){
+        $req->session()->put("cart",$newcart);
+       }
+       else{
+           $req->session()->forget('cart');
+       }
+
+        
+        
+    
+    return view('Layouts/Cart');
+    }
+    public function asccart(Request $req,$id){
+        
+            
+        $oldcart= Session("cart")?Session("cart"):null; 
+        $newcart= new cart($oldcart);
+        $newcart->ascproduct($id);
+       if(Count($newcart->product)>0){
+        $req->session()->put("cart",$newcart);
+       }
+       else{
+           $req->session()->forget('cart');
+       }
+
+        
+        
+    
+    return view('Layouts/Cart');
+    }
+    
 
 
 }

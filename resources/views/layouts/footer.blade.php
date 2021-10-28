@@ -8,7 +8,7 @@
             <h4 class="module-title">Contact Us</h4>
           </div>
           <!-- /.module-heading -->
-          
+
           <div class="module-body">
             <ul class="toggle-footer" style="">
               <li class="media">
@@ -30,16 +30,16 @@
               </li>
             </ul>
           </div>
-          <!-- /.module-body --> 
+          <!-- /.module-body -->
         </div>
         <!-- /.col -->
-        
+
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="module-heading">
             <h4 class="module-title">Customer Service</h4>
           </div>
           <!-- /.module-heading -->
-          
+
           <div class="module-body">
             <ul class='list-unstyled'>
               <li class="first"><a href="#" title="Contact us">My Account</a></li>
@@ -49,16 +49,16 @@
               <li class="last"><a href="#" title="Where is my order?">Help Center</a></li>
             </ul>
           </div>
-          <!-- /.module-body --> 
+          <!-- /.module-body -->
         </div>
         <!-- /.col -->
-        
+
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="module-heading">
             <h4 class="module-title">Corporation</h4>
           </div>
           <!-- /.module-heading -->
-          
+
           <div class="module-body">
             <ul class='list-unstyled'>
               <li class="first"><a title="Your Account" href="#">About us</a></li>
@@ -68,16 +68,16 @@
               <li class="last"><a title="Orders History" href="#">Advanced Search</a></li>
             </ul>
           </div>
-          <!-- /.module-body --> 
+          <!-- /.module-body -->
         </div>
         <!-- /.col -->
-        
+
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="module-heading">
             <h4 class="module-title">Why Choose Us</h4>
           </div>
           <!-- /.module-heading -->
-          
+
           <div class="module-body">
             <ul class='list-unstyled'>
               <li class="first"><a href="#" title="About us">Shopping Guide</a></li>
@@ -87,7 +87,7 @@
               <li class=" last"><a href="contact-us.html" title="Suppliers">Contact Us</a></li>
             </ul>
           </div>
-          <!-- /.module-body --> 
+          <!-- /.module-body -->
         </div>
       </div>
     </div>
@@ -108,94 +108,151 @@
       <div class="col-xs-12 col-sm-6 no-padding">
         <div class="clearfix payment-methods">
           <ul>
-            <li><img src="assets\images\payments\1.png" alt=""></li>
-            <li><img src="assets\images\payments\2.png" alt=""></li>
-            <li><img src="assets\images\payments\3.png" alt=""></li>
-            <li><img src="assets\images\payments\4.png" alt=""></li>
-            <li><img src="assets\images\payments\5.png" alt=""></li>
+            <li><img src="http://localhost:8000/assets\images\payments\1.png" alt=""></li>
+            <li><img src="http://localhost:8000/assets\images\payments\2.png" alt=""></li>
+            <li><img src="http://localhost:8000/assets\images\payments\3.png" alt=""></li>
+            <li><img src="http://localhost:8000/assets\images\payments\4.png" alt=""></li>
+            <li><img src="http://localhost:8000/assets\images\payments\5.png" alt=""></li>
           </ul>
         </div>
-        <!-- /.payment-methods --> 
+        <!-- /.payment-methods -->
       </div>
     </div>
   </div>
 </footer>
-<!-- ============================================================= FOOTER : END============================================================= --> 
+<!-- ============================================================= FOOTER : END============================================================= -->
 
-<!-- For demo purposes – can be removed on production --> 
+<!-- For demo purposes – can be removed on production -->
 
-<!-- For demo purposes – can be removed on production : End --> 
+<!-- For demo purposes – can be removed on production : End -->
 
-<!-- JavaScripts placed at the end of the document so the pages load faster --> 
-<script src="assets\js\jquery-1.11.1.min.js"></script> 
-<script src="assets\js\bootstrap.min.js"></script> 
-<script src="assets\js\bootstrap-hover-dropdown.min.js"></script> 
-<script src="assets\js\owl.carousel.min.js"></script> 
-<script src="assets\js\echo.min.js"></script> 
-<script src="assets\js\jquery.easing-1.3.min.js"></script> 
-<script src="assets\js\bootstrap-slider.min.js"></script> 
-<script src="assets\js\jquery.rateit.min.js"></script> 
-<script type="text/javascript" src="assets\js\lightbox.min.js"></script> 
-<script src="assets\js\bootstrap-select.min.js"></script> 
-<script src="assets\js\wow.min.js"></script> 
-<script src="assets\js\scripts.js"></script>
+<!-- JavaScripts placed at the end of the document so the pages load faster -->
+<script src="http://localhost:8000/assets\js\jquery-1.11.1.min.js"></script>
+<script src="http://localhost:8000/assets\js\bootstrap.min.js"></script>
+<script src="http://localhost:8000/assets\js\bootstrap-hover-dropdown.min.js"></script>
+<script src="http://localhost:8000/assets\js\owl.carousel.min.js"></script>
+<script src="http://localhost:8000/assets\js\echo.min.js"></script>
+<script src="http://localhost:8000/assets\js\jquery.easing-1.3.min.js"></script>
+<script src="http://localhost:8000/assets\js\bootstrap-slider.min.js"></script>
+<script src="http://localhost:8000/assets\js\jquery.rateit.min.js"></script>
+<script type="text/javascript" src="http://localhost:8000/assets\js\lightbox.min.js"></script>
+<script src="http://localhost:8000/assets\js\bootstrap-select.min.js"></script>
+<script src="http://localhost:8000/assets\js\wow.min.js"></script>
+<script src="http://localhost:8000/assets\js\scripts.js"></script>
 <script type="text/javascript">
-          function addcart(id){
-          $.ajax(
-            {
-              url:'/addcart/'+id,
-              type:'GET',
+  function addcart(id) {
+    $.ajax({
+      url: '/addcart/' + id,
+      type: 'GET',
 
-            }
-          ).done(function(Response){
-              
-              $("#changcart").empty();
-              $("#changcart").html(Response);
-          });
-        };
-        $("#changcart").on("click",".delete_product i",function(){
+    }).done(function(Response) {
 
-          
-          $.ajax(
-            {
-              url:'/delcart/'+$(this).data("id"),
-              type:'GET',
+      $("#changcart").empty();
+      $("#changcart").html(Response);
+    });
+  };
+  //----------------------------------------------------------
+  $("#changcart").on("click", ".delete_product i", function() {
 
-            }
-          ).done(function(Response){
-              
-              $("#changcart").empty();
-              $("#changcart").html(Response);
-          });
-        });
 
-      $("#shoppingcart").on("click",".remo i",function(){
-   
-$.ajax(
-  {
-    url:'/shoppingdelcart/'+$(this).data("id"),
-    type:'GET',
+    $.ajax({
+      url: '/delcart/' + $(this).data("id"),
+      type: 'GET',
 
-  }
-).done(function(Response){
-    
-    $("#shoppingcart").empty();
-    $("#shoppingcart").html(Response);
+    }).done(function(Response) {
+
+      $("#changcart").empty();
+      $("#changcart").html(Response);
+    });
+  });
+//-------------------------------------------------------------
+  $("#shoppingcart").on("click", ".remo i", function() {
+
+    $.ajax({
+      url: '/shoppingdelcart/' + $(this).data("id"),
+      type: 'GET',
+
+    }).done(function(Response) {
+
+      $("#shoppingcart").empty();
+      $("#shoppingcart").html(Response);
+    });
+
+    $.ajax({
+      url: '/viewcart',
+      type: 'GET',
+
+    }).done(function(Response) {
+
+      $("#changcart").empty();
+      $("#changcart").html(Response);
+    });
+
+  });
+//---------------------------------------------
+  $("#changcart").on("click", ".delete_product i", function() {
+
+
+    $.ajax({
+      url: '/delcart/' + $(this).data("id"),
+      type: 'GET',
+
+    }).done(function(Response) {
+
+      $("#changcart").empty();
+      $("#changcart").html(Response);
+    });
+  });
+
+//---------------------------------------
+  $("#shoppingcart").on("click", ".arrowdown i", function() {
+
+    $.ajax({
+      url: '/shoppingdescart/' + $(this).data("id"),
+      type: 'GET',
+       
+    }).done(function(Response) {
+
+      $("#shoppingcart").empty();
+      $("#shoppingcart").html(Response);
+    });
+
+    $.ajax({
+      url: '/viewcart',
+      type: 'GET',
+
+    }).done(function(Response) {
+
+      $("#changcart").empty();
+      $("#changcart").html(Response);
+    });
+
+  });
+//----------------------------
+  $("#shoppingcart").on("click", ".arrowup i", function() {
+
+$.ajax({
+  url: '/shoppingasccart/' + $(this).data("id"),
+  type: 'GET',
+
+}).done(function(Response) {
+  
+  $("#shoppingcart").empty();
+  $("#shoppingcart").html(Response);
 });
-$.ajax(
-            {
-              url:'/viewcart',
-              type:'GET',
 
-            }
-          ).done(function(Response){
-              
-              $("#changcart").empty();
-              $("#changcart").html(Response);
-          });
+$.ajax({
+  url: '/viewcart',
+  type: 'GET',
 
+}).done(function(Response) {
+
+  $("#changcart").empty();
+  $("#changcart").html(Response);
 });
 
+});
 </script>
 </body>
+
 </html>

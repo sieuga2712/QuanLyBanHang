@@ -40,9 +40,35 @@ class cart extends Model
         $this->totalpro-=$this->product[$id]['quanty'];
         $this->totalprice-=$this->product[$id]['price'];
         unset($this->product[$id]);
-        
-
     }
+
+        public function desproduct($id){
+            if( $this->product[$id]['quanty']>1)
+            {
+            $this->totalpro--;
+            $this->product[$id]['quanty']--;
+            $this->product[$id]['price']=$this->product[$id]['productinfo']->dongia* $this->product[$id]['quanty'];
+            $this->totalprice-=$this->product[$id]['productinfo']->dongia;
+            }
+            else
+               {
+                $this->totalpro-=$this->product[$id]['quanty'];
+                $this->totalprice-=$this->product[$id]['price'];
+                unset($this->product[$id]);
+               }
+            
+    
+        }
+        public function ascproduct($id){
+            
+            $this->totalpro++;
+            $this->product[$id]['quanty']++;
+            $this->product[$id]['price']=$this->product[$id]['productinfo']->dongia* $this->product[$id]['quanty'];
+            $this->totalprice+=$this->product[$id]['productinfo']->dongia;
+            
+            
+    
+        }    
     
     
 }

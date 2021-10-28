@@ -6,11 +6,16 @@ use App\loaihang as AppLoaihang;
 use Illuminate\Http\Request;
 use App\Models\sanpham;
 use App\Models\loaihang;
-
-class ControllerSanPham extends Controller
+use DB;
+class SanPhamController extends Controller
 {
     public function view(){
         //$this->themsanpham();
+    }
+    public function upda(){
+        $sanpham =  DB::select('select * from sanphams ');
+        $sanpham->dongia=$sanpham->dongia/1000000;
+        $sanpham->save();
     }
     //
     public function themsanpham()
@@ -175,10 +180,10 @@ class ControllerSanPham extends Controller
         return view('product.index',['sanpham'=> $sanpham]);  
     }  
 
-    public function detail($mahang,$id)
+    public function detail($mahang)
     {
-        $sanpham = sanpham::Find($id);
-        $ListRelatedProduct =\App\Models\sanpham::get_ListRelatedProduct($id,15); 
+        $sanpham = sanpham::Find($mahang);
+        $ListRelatedProduct =\App\Models\sanpham::get_ListRelatedProduct($sanpham->maloai); 
         return view('product.detail',['sanpham'=> $sanpham, 'ListRelatedProduct'=> $ListRelatedProduct]);     
     } 
        

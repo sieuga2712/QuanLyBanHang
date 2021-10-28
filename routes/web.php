@@ -20,13 +20,20 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/tao','SanPhamController@view');
+Route::get('/update','SanPhamController@upda');
 Route::get('/taokk','KhuyenmaiController@view');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/listcart', 'listcart@view');
 Route::get('/addcart/{id}','CartController@addcart');
 Route::get('/delcart/{id}','CartController@deletecart');
+Route::get('/descart/{id}','CartController@descart');
+Route::get('/ascscart/{id}','CartController@asccart');
+
+
 Route::get('/viewcart','CartController@viewcart');
 Route::get('/shoppingdelcart/{id}','listcart@deletecart');
+Route::get('/shoppingdescart/{id}','listcart@descart');
+Route::get('/shoppingasccart/{id}','listcart@asccart');
 
 
 //Route::get('/{mahang}-{id}', 'SanPhamController@detail')->name('detail');

@@ -395,7 +395,7 @@ $list=\App\Models\sanpham::get_hang();
                         <!-- /.product-image -->
 
                         <div class="product-info text-left">
-                          <h3 class="name"><a href="detail.html">{{$value->mahang}}</a></h3>
+                          <h3 class="name"><a href="/chi">{{$value->mahang}}</a></h3>
                           <div class="rating rateit-small"></div>
                           <div class="description"></div>
                           <div class="product-price"> <span class="price"> {{$value->dongia}} đồng </span> </div>
