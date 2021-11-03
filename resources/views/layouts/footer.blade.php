@@ -151,6 +151,12 @@
       $("#changcart").html(Response);
     });
   };
+  function chuadangnhap(){
+    alert("ban chua dang nhap");
+  };
+  function userdang(id){
+    alert(id);
+  }
   //----------------------------------------------------------
   $("#changcart").on("click", ".delete_product i", function() {
 
@@ -252,6 +258,28 @@ $.ajax({
 });
 
 });
+//----------------------------------------------
+function getValue(id){
+  return document.getElementById(id).value.trim();
+}
+function kiemtra(){
+ var flag=true;
+var que= getValue('quequan');
+var dia=getValue('diachi');
+if(que==0)
+  {alert("ban chua chon que quan");
+  flag=false;
+  }
+
+if(dia=="")
+{
+  alert("ban chua ghi dia chi");
+  flag=false;
+}
+
+
+return flag;
+};
 </script>
 </body>
 

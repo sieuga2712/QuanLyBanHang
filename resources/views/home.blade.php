@@ -1,5 +1,12 @@
 ﻿@extends('layouts.header')
 @section('content')
+@php
+echo "okkkkkkkk";
+$che=\App\Http\Controllers\Auth\loginController::checklogin();
+
+echo $che;
+@endphp
+
 <!-- ============================================== HEADER : END ============================================== -->
 <div class="body-content outer-top-xs" id="top-banner-and-menu">
   <div class="container">

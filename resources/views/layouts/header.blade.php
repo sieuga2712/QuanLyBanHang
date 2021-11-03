@@ -309,15 +309,12 @@
 
 
 
-  <div>
+  
     @yield('content')
 
-  </div>
+ 
 
-  <div>
-
-
-  </div>
+  
   @extends('layouts.footer')
 
 

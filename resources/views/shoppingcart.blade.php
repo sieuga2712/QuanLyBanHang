@@ -38,8 +38,19 @@
 									<td colspan="7">
 										<div class="shopping-cart-btn">
 											<span class="">
+												@php
 
-												<a href="#" class="btn btn-upper btn-primary pull-right outer-right-xs">mua hàng</a>
+												$che=\App\Http\Controllers\Auth\loginController::checklogin();
+												$use=\App\Http\Controllers\Auth\loginController::userlogin();
+
+
+												@endphp
+												@if ($che==1)
+												<a  href="/thanhtoan" class="btn btn-upper btn-primary pull-right outer-right-xs">mua hàng</a>
+												@else
+												<a onclick="chuadangnhap()" href="javascript:" class="btn btn-upper btn-primary pull-right outer-right-xs">mua hàng</a>			
+												@endif
+												
 											</span>
 										</div><!-- /.shopping-cart-btn -->
 									</td>
@@ -123,7 +134,7 @@
 				</div><!-- /.shopping-cart-table -->
 				@else
 				<div class="body-content outer-top-xs">
-					bạn chưa chọn mua sản phẩm nào
+					<h1>bạn chưa chọn mua sản phẩm nào</h1>
 				</div>
 				@endif
 				<!-- /.cart-shopping-total -->
@@ -134,6 +145,6 @@
 		<!-- ============================================== BRANDS CAROUSEL : END ============================================== -->
 	</div><!-- /.container -->
 </div><!-- /.body-content -->
-
+<br>
 <!-- ============================================================= FOOTER ============================================================= -->
 @endsection
