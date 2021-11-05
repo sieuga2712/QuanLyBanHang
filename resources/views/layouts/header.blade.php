@@ -248,7 +248,7 @@
             <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
               <div class="nav-outer">
                 <ul class="nav navbar-nav">
-                  <li class="active dropdown yamm-fw"> <a href="{{ route('home') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">trang chủ</a> </li>
+                  <li class="active dropdown yamm-fw"> <a href="/"  class="dropdown-toggle" >trang chủ</a> </li>
                   
                   @php 
 

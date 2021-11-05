@@ -10,7 +10,7 @@ class ItemMenuController extends Controller
 {
     //
    public static function View(){
-    echo "awsdasaaaaaaaaaaaaaa";
+    
     $re=DB::select('select * from  sanphams   where manhasanxuat="apple" limit 7');
     $na=array();
     foreach($re as $i){

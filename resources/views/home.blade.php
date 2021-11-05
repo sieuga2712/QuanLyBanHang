@@ -1,10 +1,9 @@
 ﻿@extends('layouts.header')
 @section('content')
 @php
-echo "okkkkkkkk";
 $che=\App\Http\Controllers\Auth\loginController::checklogin();
 
-echo $che;
+
 @endphp
 
 <!-- ============================================== HEADER : END ============================================== -->
@@ -464,7 +463,7 @@ $list=\App\Models\sanpham::get_hang();
                         <!-- /.product-image -->
 
                         <div class="product-info text-left">
-                          <h3 class="name"><a href="/chi-tiet/{{$value->mahang}}">{{$value->name}}</a></h3>
+                          <h3 class="name"><a href="/chi-tiet/{{$value->mahang}}">{{$value->mahang}}</a></h3>
                           <div class="rating rateit-small"></div>
                           <div class="description"></div>
                           <div class="product-price"> <span class="price"> {{$value->dongia}} đồng </span> </div>
