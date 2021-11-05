@@ -39,8 +39,10 @@
 										<div class="shopping-cart-btn">
 											<span class="">
 												@php
-
+												$use="";
+												
 												$che=\App\Http\Controllers\Auth\loginController::checklogin();
+												if($che==1)
 												$use=\App\Http\Controllers\Auth\loginController::userlogin();
 
 

@@ -41,6 +41,11 @@ class cart extends Model
         $this->totalprice-=$this->product[$id]['price'];
         unset($this->product[$id]);
     }
+    public function deletecart(){
+        $this->totalpro=0;
+        $this->totalprice=0;
+        $this->product=array();
+    }
 
         public function desproduct($id){
             if( $this->product[$id]['quanty']>1)

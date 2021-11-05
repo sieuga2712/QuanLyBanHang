@@ -40,8 +40,11 @@ class thanhtoanController extends Controller
             $chitiet->save();
 
         }
-
-        return view('product.thanhtoan');
+        $oldcart= Session("cart")?Session("cart"):null; 
+        $newcart= new cart($oldcart);
+        $newcart->deletecart();
+        $request->session()->forget('cart');
+        return redirect('home');
         
     }
 }
