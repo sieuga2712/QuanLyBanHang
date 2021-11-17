@@ -68,4 +68,20 @@ public function asccart(Request $req,$id){
 
 return view('Layouts/shopcart');
 }
+public function changequanty(Request $req,$id,$sl){
+    $oldcart= Session("cart")?Session("cart"):null; 
+    $newcart= new cart($oldcart);
+    
+    $newcart->ChangQuantyProduct($id,$sl);
+    if(Count($newcart->product)>0){
+        $req->session()->put("cart",$newcart);
+       }
+       else{
+           $req->session()->forget('cart');
+       }
+    return view('Layouts/shopcart');
 }
+
+}
+
+

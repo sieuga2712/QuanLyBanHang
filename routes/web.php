@@ -34,6 +34,7 @@ Route::get('/viewcart','CartController@viewcart');
 Route::get('/shoppingdelcart/{id}','listcart@deletecart');
 Route::get('/shoppingdescart/{id}','listcart@descart');
 Route::get('/shoppingasccart/{id}','listcart@asccart');
+Route::get('/shoppingChangeinput/{id}/{value}','listcart@changequanty');
 Route::get('/thanhtoan','thanhtoancontroller@view');
 Route::post('/taodonhang','thanhtoancontroller@create_hoadon');
 

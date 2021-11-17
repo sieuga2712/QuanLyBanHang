@@ -106,7 +106,11 @@
 									</div>
 
 									<div class="col-sm-7">
-										<a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART</a>
+										
+											<a onclick="addcart('{{$sanpham[0]->mahang}}')" href="javascript:" class="btn btn-primary">
+											<i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART
+											</a>
+										
 									</div>
 
 									

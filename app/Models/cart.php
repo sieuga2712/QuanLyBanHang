@@ -73,7 +73,15 @@ class cart extends Model
             
             
     
-        }    
+        }
+        public function ChangQuantyProduct($id,$sl){
+            $this->totalpro=$this->totalpro - $this->product[$id]['quanty']+  $sl;
+            $this->product[$id]['quanty'] = $sl;
+            $this->totalprice -= $this->product[$id]['price'];
+            $this->product[$id]['price']= $this->product[$id]['productinfo']->dongia* $this->product[$id]['quanty'];
+            $this->totalprice += $this->product[$id]['price'];
+            
+        }   
     
     
 }

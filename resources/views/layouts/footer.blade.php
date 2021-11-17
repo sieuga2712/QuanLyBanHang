@@ -151,10 +151,12 @@
       $("#changcart").html(Response);
     });
   };
-  function chuadangnhap(){
+
+  function chuadangnhap() {
     alert("ban chua dang nhap");
   };
-  function userdang(id){
+
+  function userdang(id) {
     alert(id);
   }
   //----------------------------------------------------------
@@ -171,7 +173,7 @@
       $("#changcart").html(Response);
     });
   });
-//-------------------------------------------------------------
+  //-------------------------------------------------------------
   $("#shoppingcart").on("click", ".remo i", function() {
 
     $.ajax({
@@ -195,7 +197,7 @@
     });
 
   });
-//---------------------------------------------
+  //---------------------------------------------
   $("#changcart").on("click", ".delete_product i", function() {
 
 
@@ -210,76 +212,71 @@
     });
   });
 
-//---------------------------------------
-  $("#shoppingcart").on("click", ".arrowdown i", function() {
-
-    $.ajax({
-      url: '/shoppingdescart/' + $(this).data("id"),
-      type: 'GET',
-       
-    }).done(function(Response) {
-
-      $("#shoppingcart").empty();
-      $("#shoppingcart").html(Response);
-    });
-
-    $.ajax({
-      url: '/viewcart',
-      type: 'GET',
-
-    }).done(function(Response) {
-
-      $("#changcart").empty();
-      $("#changcart").html(Response);
-    });
-
-  });
-//----------------------------
-  $("#shoppingcart").on("click", ".arrowup i", function() {
-
-$.ajax({
-  url: '/shoppingasccart/' + $(this).data("id"),
-  type: 'GET',
-
-}).done(function(Response) {
-  
-  $("#shoppingcart").empty();
-  $("#shoppingcart").html(Response);
-});
-
-$.ajax({
-  url: '/viewcart',
-  type: 'GET',
-
-}).done(function(Response) {
-
-  $("#changcart").empty();
-  $("#changcart").html(Response);
-});
-
-});
-//----------------------------------------------
-function getValue(id){
-  return document.getElementById(id).value.trim();
-}
-function kiemtra(){
- var flag=true;
-var que= getValue('quequan');
-var dia=getValue('diachi');
-if(que==0)
-  {alert("ban chua chon que quan");
-  flag=false;
+  //---------------------------------------
+ 
+  //----------------------------
+ 
+  //----------------------------------------------
+  function getValue(id) {
+    return document.getElementById(id).value.trim();
   }
 
-if(dia=="")
-{
-  alert("ban chua ghi dia chi");
-  flag=false;
-}
+  function kiemtra() {
+    var flag = true;
+    var que = getValue('quequan');
+    var dia = getValue('diachi');
+    if (que == 0) {
+      alert("ban chua chon que quan");
+      flag = false;
+    }
+
+    if (dia == "") {
+      alert("ban chua ghi dia chi");
+      flag = false;
+    }
 
 
-return flag;
-};
+    return flag;
+  };
+
+  function updateinput(id, number) {
+    if (!(+number.value === parseInt(number.value))) {
+      alert("ban phai nhap so nguyen ");
+      document.getElementById("sc_" + id).value = number.oldvalue;
+    } else {
+
+      if (number.value <= 0) {
+
+        document.getElementById("sc_" + id).value = 1;
+      } else if (number.value >= 1000) {
+        document.getElementById("sc_" + id).value = 999;
+
+      }
+      $.ajax({
+        url: '/shoppingChangeinput/' + id +"/"+ number.value,
+        type: 'GET',
+
+      }).done(function(Response) {
+
+        $("#shoppingcart").empty();
+        $("#shoppingcart").html(Response);
+      });
+
+      $.ajax({
+        url: '/viewcart',
+        type: 'GET',
+
+      }).done(function(Response) {
+
+        $("#changcart").empty();
+        $("#changcart").html(Response);
+      });
+    }
+
+
+
+
+  };
 </script>
 </body>
 

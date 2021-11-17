@@ -89,31 +89,15 @@
 						<td class="cart-product-quantity">
 
 							<div class="quant-input">
-								<div class="arrows">
-
-									<div class="arrow plus gradient">
-										<span class="ir">
-											<a href="#">
-												<div class="arrowup">
-													<i class="icon fa fa-sort-asc" data-id="{{$pro['productinfo']->mahang}}"></i>
-												</div>
-											</a>
-
-										</span>
-									</div>
-
-									<div class="arrow minus gradient">
-										<span class="ir">
-											<a href="#">
-												<div class="arrowdown">
-													<i class="icon fa fa-sort-desc" data-id="{{$pro['productinfo']->mahang}}"></i>
-												</div>
-											</a>
-										</span>
-									</div>
-								</div>
-								<input type="text" value="{{$pro['quanty']}}">
+								
+								<input type="number" id="sc_{{$pro['productinfo']->mahang}}" 
+											onfocus="this.oldvalue = this.value;"
+											onchange="updateinput('{{$pro['productinfo']->mahang}}',this);this.oldvalue = this.value;" 
+											
+											href="javascript:" 
+											value="{{$pro['quanty']}}">
 							</div>
+
 						</td>
 						<td class="cart-product-sub-total"><span class="cart-sub-total-price">{{$pro['productinfo']->dongia}}</span></td>
 						<td class="cart-product-grand-total"><span class="cart-grand-total-price">{{$pro['price']}}</span></td>
