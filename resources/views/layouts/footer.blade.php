@@ -278,7 +278,7 @@
 
   };
   // chức năng tìm kiếm "header" 
-  $('#search').on('click', function(e) {
+  $('#search').keypress.on('click', function(e) {
     e.preventDefault();
     var val = $('#input-search').val();
     alert(val);
