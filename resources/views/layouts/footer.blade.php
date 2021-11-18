@@ -213,9 +213,9 @@
   });
 
   //---------------------------------------
- 
+
   //----------------------------
- 
+
   //----------------------------------------------
   function getValue(id) {
     return document.getElementById(id).value.trim();
@@ -253,7 +253,7 @@
 
       }
       $.ajax({
-        url: '/shoppingChangeinput/' + id +"/"+ number.value,
+        url: '/shoppingChangeinput/' + id + "/" + number.value,
         type: 'GET',
 
       }).done(function(Response) {
@@ -277,6 +277,36 @@
 
 
   };
+  // chức năng tìm kiếm "header" 
+  $('#search').on('click', function(e) {
+    e.preventDefault();
+    var val = $('#input-search').val();
+    alert(val);
+    window.location.href = "/search/" + val;
+  });
+
+  // slidebar fillter theo giá 
+  $('#show').on('click', function(e) 
+  {
+    e.preventDefault();
+
+    var price_slide = document.getElementById("price").value;
+    var arr = price_slide.split(',');
+    // var price_min = min * min_val;
+    // var price_max = max * max_val;
+    var price_min = arr[0] * 100000;
+    var price_max = arr[1] * 100000;
+  
+    $.ajax({
+    url: '/fillter_price/' + price_min + "/" + price_max,
+    type: 'GET',
+    }).done(function(Response) {
+    $('#result').empty();
+    $('#result').html(Response);
+    });
+  });
+  
+  
 </script>
 </body>
 

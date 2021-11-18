@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/fillter_price/{min}/{max}','SanPhamController@fillter_price');
 Route::get('/tao','SanPhamController@view');
 Route::get('/update','SanPhamController@upda');
 Route::get('/taokk','KhuyenmaiController@view');
@@ -31,6 +32,7 @@ Route::get('/ascscart/{id}','CartController@asccart');
 
 
 Route::get('/viewcart','CartController@viewcart');
+Route::get('/search/{inf}', 'SanPhamController@search')->name('search');
 Route::get('/shoppingdelcart/{id}','listcart@deletecart');
 Route::get('/shoppingdescart/{id}','listcart@descart');
 Route::get('/shoppingasccart/{id}','listcart@asccart');

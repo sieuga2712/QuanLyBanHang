@@ -110,8 +110,8 @@
               <form>
                 <div class="control-group">
 
-                  <input class="search-field" placeholder="Search here...">
-                  <a class="search-button" href="#"></a>
+                  <input id="input-search" class="search-field" placeholder="Search here...">
+                  <a id="search" class="search-button" href=""></a>
                 </div>
               </form>
             </div>

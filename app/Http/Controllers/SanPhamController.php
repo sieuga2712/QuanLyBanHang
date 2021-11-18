@@ -188,9 +188,21 @@ class SanPhamController extends Controller
        
     public function search($inf)
     {      
-        $sanpham = DB:: select("select * from sanphams, loaihangs, nhasanxuats
-        where sanphams.maloai = loaihangs.maloaihang and sanphams.manhasanxuat = nhasanxuats.manhasanxuat 
-        and sanphams.name like '%?%' or loaihangs.tenloaihang like '%?%' or nhasanxuats.tennhasanxuat like '%?%' " , [$inf,$inf,$inf]);
-         return view('product.search',['sanpham'=> $sanpham]);
+        $sanpham = DB::table('sanphams')
+                    -> leftJoin('loaihangs', 'loaihangs.maloaihang', '=', 'sanphams.maloai')
+                    -> leftJoin('nhasanxuats', 'nhasanxuats.manhasanxuat', '=', 'sanphams.manhasanxuat')
+                    -> where('sanphams.manhasanxuat', '=', $inf)
+                    -> orWhere('sanphams.name', '=', $inf)
+                    -> orWhere('loaihangs.tenloaihang', '=', $inf)
+                    -> select('*')
+                    -> get();
+        return view('product.search',['sanpham'=> $sanpham]);
     }  
+
+    public function fillter_price($min, $max)
+    {
+       $sanpham = DB::select('select * from sanphams where sanphams.dongia between ? and ?', [$min, $max]); 
+       //$sanpham = DB::select('select * from sanphams where sanphams.dongia between ? and ? and  maloai=? and manhasanxuat =?', [$maloaihang,$manhasanxuat,$min, $max]); 
+         return view('Layouts/products',['sanpham'=> $sanpham]);  
+    }
 }
