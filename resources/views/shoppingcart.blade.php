@@ -83,11 +83,11 @@
 										<h4 class='cart-product-description'><a href="detail.html">{{$pro['productinfo']->name}}</a></h4>
 										<div class="row">
 											<div class="col-sm-4">
-												<div class="rating rateit-small"></div>
+												
 											</div>
 											<div class="col-sm-8">
 												<div class="reviews">
-													(06 Reviews)
+													
 												</div>
 											</div>
 										</div><!-- /.row -->

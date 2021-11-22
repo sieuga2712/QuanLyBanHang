@@ -29,12 +29,10 @@
 						<div class="rating-reviews m-t-20">
 							<div class="row">
 								<div class="col-sm-3">
-									<div class="rating rateit-small"></div>
+									
 								</div>
 								<div class="col-sm-8">
-									<div class="reviews">
-										<a href="#" class="lnk">(13 Reviews)</a>
-									</div>
+									
 								</div>
 							</div><!-- /.row -->
 						</div><!-- /.rating-reviews -->
@@ -43,15 +41,15 @@
 							<div class="row">
 								<div class="col-sm-2">
 									<div class="stock-box">
-										<span class="label">Availability :</span>
+										<span class="label">tình trạng :</span>
 									</div>
 								</div>
 								<div class="col-sm-9">
 									<div class="stock-box">
 										@if($sanpham[0]->soluong>0)
-										<span class="value">con hang</span>
+										<span class="value">còn hàng</span>
 										@else
-										<span class="value">het hang</span>
+										<span class="value">hết hàng</span>
 										@endif
 									</div>
 								</div>
@@ -73,17 +71,7 @@
 								</div>
 
 								<div class="col-sm-6">
-									<div class="favorite-button m-t-10">
-										<a class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Wishlist" href="#">
-											<i class="fa fa-heart"></i>
-										</a>
-										<a class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Add to Compare" href="#">
-											<i class="fa fa-signal"></i>
-										</a>
-										<a class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="E-mail" href="#">
-											<i class="fa fa-envelope"></i>
-										</a>
-									</div>
+									
 								</div>
 
 							</div><!-- /.row -->
@@ -135,7 +123,7 @@
 				<div class="col-sm-3">
 					<ul id="product-tabs" class="nav nav-tabs nav-tab-cell">
 						<li class="active"><a data-toggle="tab" href="#description">DESCRIPTION</a></li>
-						<li><a data-toggle="tab" href="#review">REVIEW</a></li>
+						
 
 					</ul><!-- /.nav-tabs #product-tabs -->
 				</div>
@@ -149,74 +137,7 @@
 							</div>
 						</div><!-- /.tab-pane -->
 
-						<div id="review" class="tab-pane">
-							<div class="product-tab">
-
-								<div class="product-reviews">
-									<h4 class="title">Customer Reviews</h4>
-
-									<div class="reviews">
-										<div class="review">
-											<div class="review-title"><span class="summary">We love this product</span><span class="date"><i class="fa fa-calendar"></i><span>1 days ago</span></span></div>
-											<div class="text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aliquam suscipit."</div>
-										</div>
-
-									</div><!-- /.reviews -->
-								</div><!-- /.product-reviews -->
-
-
-
-								<div class="product-add-review">
-									<h4 class="title">Write your own review</h4>
-									<div class="review-table">
-										<div class="table-responsive">
-											<table class="table">
-												<thead>
-													<tr>
-														<th class="cell-label">&nbsp;</th>
-														<th>1 star</th>
-														<th>2 stars</th>
-														<th>3 stars</th>
-														<th>4 stars</th>
-														<th>5 stars</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td class="cell-label">Quality</td>
-														<td><input type="radio" name="quality" class="radio" value="1"></td>
-														<td><input type="radio" name="quality" class="radio" value="2"></td>
-														<td><input type="radio" name="quality" class="radio" value="3"></td>
-														<td><input type="radio" name="quality" class="radio" value="4"></td>
-														<td><input type="radio" name="quality" class="radio" value="5"></td>
-													</tr>
-													<tr>
-														<td class="cell-label">Price</td>
-														<td><input type="radio" name="quality" class="radio" value="1"></td>
-														<td><input type="radio" name="quality" class="radio" value="2"></td>
-														<td><input type="radio" name="quality" class="radio" value="3"></td>
-														<td><input type="radio" name="quality" class="radio" value="4"></td>
-														<td><input type="radio" name="quality" class="radio" value="5"></td>
-													</tr>
-													<tr>
-														<td class="cell-label">Value</td>
-														<td><input type="radio" name="quality" class="radio" value="1"></td>
-														<td><input type="radio" name="quality" class="radio" value="2"></td>
-														<td><input type="radio" name="quality" class="radio" value="3"></td>
-														<td><input type="radio" name="quality" class="radio" value="4"></td>
-														<td><input type="radio" name="quality" class="radio" value="5"></td>
-													</tr>
-												</tbody>
-											</table><!-- /.table .table-bordered -->
-										</div><!-- /.table-responsive -->
-									</div><!-- /.review-table -->
-
-
-
-								</div><!-- /.product-add-review -->
-
-							</div><!-- /.product-tab -->
-						</div><!-- /.tab-pane -->
+						<!-- /.tab-pane -->
 
 
 
@@ -238,16 +159,16 @@
 								<div class="image">
 									<a href="/chi-tiet/{{$value->mahang}}"><img src="http://localhost:8000/{{$value->image}}" alt=""></a>
 								</div><!-- /.image -->
-								<div class="tag sale"><span>sale</span></div>
+								
 							</div><!-- /.product-image -->
 							<div class="product-info text-left">
 								<h3 class="name"><a href="/chi-tiet/{{$value->mahang}}">{{$value->name}}</a></h3>
-								<div class="rating rateit-small"></div>
+								
 								<div class="description"></div>
 
 								<div class="product-price">
-									<span class="price">{{$value->dongia}}</span>
-									<span class="price-before-discount">$ 800</span>
+									<span class="price">{{$value->dongia}} đồng</span>
+									
 								</div><!-- /.product-price -->
 
 							</div><!-- /.product-info -->
@@ -263,17 +184,7 @@
 
 										</li>
 
-										<li class="lnk wishlist">
-											<a class="add-to-cart" href="{{$value->mahang . '-' .$value->id}}" title="Wishlist">
-												<i class="icon fa fa-heart"></i>
-											</a>
-										</li>
-
-										<li class="lnk">
-											<a class="add-to-cart" href="{{$value->mahang . '-' .$value->id}}" title="Compare">
-												<i class="fa fa-signal"></i>
-											</a>
-										</li>
+										
 									</ul>
 								</div><!-- /.action -->
 							</div><!-- /.cart -->

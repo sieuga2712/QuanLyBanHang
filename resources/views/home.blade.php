@@ -192,7 +192,7 @@ $listhot=\App\Models\sanpham::sanphamhot();
 
                         <div class="product-info text-left">
                           <h3 class="name"><a href="/chi-tiet/{{$value->mahang}}">{{$value->mahang}}</a></h3>
-                          <div class="rating rateit-small"></div>
+                          
                           <div class="description"></div>
                           <div class="product-price"> <span class="price"> {{$value->dongia}} đồng </span> </div>
                           <!-- /.product-price -->
@@ -302,7 +302,7 @@ $list=\App\Models\sanpham::get_hang();
 
                         <div class="product-info text-left">
                           <h3 class="name"><a href="/chi-tiet/{{$value->mahang}}">{{$value->mahang}}</a></h3>
-                          <div class="rating rateit-small"></div>
+                          
                           <div class="description"></div>
                           <div class="product-price"> <span class="price"> {{$value->dongia}} đồng </span> </div>
                           <!-- /.product-price -->
@@ -364,7 +364,7 @@ $list=\App\Models\sanpham::get_hang();
 
                         <div class="product-info text-left">
                           <h3 class="name"><a href="/chi-tiet/{{$value->mahang}}">{{$value->mahang}}</a></h3>
-                          <div class="rating rateit-small"></div>
+                          
                           <div class="description"></div>
                           <div class="product-price"> <span class="price"> {{$value->dongia}} đồng </span> </div>
                           <!-- /.product-price -->
