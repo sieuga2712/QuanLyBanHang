@@ -48,15 +48,18 @@
 									</div>
 									<div class="col-sm-9">
 										<div class="stock-box">
-											<span class="value">In Stock</span>
+											@if($sanpham[0]->soluong>0)
+											<span class="value">con hang</span>
+											@else
+											<span class="value">het hang</span>
+											@endif
 										</div>	
 									</div>
 								</div><!-- /.row -->	
 							</div><!-- /.stock-container -->
 
 							<div class="description-container m-t-20">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							</div><!-- /.description-container -->
+								</div><!-- /.description-container -->
 
 							<div class="price-container info-container m-t-20">
 								<div class="row">
@@ -64,8 +67,8 @@
 
 									<div class="col-sm-6">
 										<div class="price-box">
-											<span class="price">{{$sanpham[0]->dongia}}</span>
-											<span class="price-strike">$900.00</span>
+											<span class="price">{{$sanpham[0]->dongia}} đồng</span>
+											
 										</div>
 									</div>
 
@@ -233,12 +236,12 @@
 				<div class="product">		
 					<div class="product-image">
 						<div class="image">
-							<a href="{{$value->mahang . '-' .$value->id}}"><img src="http://localhost:8000/{{$value->image}}" alt=""></a>
+							<a href="/chi-tiet/{{$value->mahang}}"><img src="http://localhost:8000/{{$value->image}}" alt=""></a>
 						</div><!-- /.image -->			
 						<div class="tag sale"><span>sale</span></div>            		   
 					</div><!-- /.product-image -->											
 					<div class="product-info text-left">
-						<h3 class="name"><a href="{{$value->mahang . '-' .$value->id}}">{{$value->name}}</a></h3>
+						<h3 class="name"><a href="/chi-tiet/{{$value->mahang}}">{{$value->name}}</a></h3>
 						<div class="rating rateit-small"></div>
 						<div class="description"></div>
 

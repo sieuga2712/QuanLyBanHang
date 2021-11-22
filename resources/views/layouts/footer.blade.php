@@ -140,7 +140,8 @@
 <script src="http://localhost:8000/assets\js\wow.min.js"></script>
 <script src="http://localhost:8000/assets\js\scripts.js"></script>
 <script type="text/javascript">
-  function addcart(id) {
+  function addcart(id,sl) {
+    if(Number(sl)>0){
     $.ajax({
       url: '/addcart/' + id,
       type: 'GET',
@@ -149,7 +150,9 @@
 
       $("#changcart").empty();
       $("#changcart").html(Response);
-    });
+    });}
+    else 
+      alert("mat hang nay hien dang het hang");
   };
 
   function chuadangnhap() {
@@ -278,34 +281,32 @@
 
   };
   // chức năng tìm kiếm "header" 
-  $('#search').keypress.on('click', function(e) {
+  $('#search').on('click', function(e) {
     e.preventDefault();
     var val = $('#input-search').val();
-    alert(val);
+    
     window.location.href = "/search/" + val;
   });
 
   // slidebar fillter theo giá 
-  $('#show').on('click', function(e) 
-  {
-    e.preventDefault();
+  $('#show').on('click', function(e){
+  e.preventDefault();
+  var price_slide = document.getElementById("price").value;
 
-    var price_slide = document.getElementById("price").value;
-    var arr = price_slide.split(',');
-    // var price_min = min * min_val;
-    // var price_max = max * max_val;
-    var price_min = arr[0] * 100000;
-    var price_max = arr[1] * 100000;
+  var arr = price_slide.split(',');
+  var price_min = arr[0];
+  var price_max = arr[1];
   
+
     $.ajax({
-    url: '/fillter_price/' + price_min + "/" + price_max,
+    url: '/fillter_price/'+ price_min + "/" + price_max,
     type: 'GET',
-    }).done(function(Response) {
+
+  }).done(function(Response){
     $('#result').empty();
     $('#result').html(Response);
-    });
   });
-  
+});
   
 </script>
 </body>

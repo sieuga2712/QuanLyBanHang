@@ -170,14 +170,27 @@ class SanPhamController extends Controller
     }
 
     public function index($maloaihang, $manhasanxuat)
-    {
+    {   $min_price = DB::select('SELECT MIN(sanphams.dongia)as "min_price"  FROM sanphams where  maloai=? and manhasanxuat =?',[$maloaihang,$manhasanxuat]) ;
+        $max_price = DB::select('SELECT MAX(sanphams.dongia)as "max_price"  FROM sanphams where  maloai=? and manhasanxuat =?',[$maloaihang,$manhasanxuat]) ;
         $sanpham =  DB::select('select * from sanphams where  maloai=? and manhasanxuat =?',[$maloaihang,$manhasanxuat]);
-        return view('product.index',['sanpham'=> $sanpham]);  
+        $brand = DB::table('sanphams')
+            -> join('nhasanxuats', 'nhasanxuats.manhasanxuat', '=', 'sanphams.manhasanxuat')         
+            -> where('sanphams.maloai', '=', $maloaihang)
+            -> select('*')
+            -> get();
+        return view('product.index',['sanpham'=> $sanpham, 'brand'=>$brand , 'min_price'=> $min_price, 'max_price'=> $max_price]);
     }  
     public function indexs($maloaihang)
     {
+        $min_price = DB::select('SELECT MIN(sanphams.dongia)as "min_price"  FROM sanphams where  maloai=?',[$maloaihang]) ;
+        $max_price = DB::select('SELECT MAX(sanphams.dongia)as "max_price"  FROM sanphams where  maloai=?',[$maloaihang]) ;
         $sanpham = DB::select('select * from sanphams where  maloai=?',[$maloaihang]);
-        return view('product.index',['sanpham'=> $sanpham]);  
+        $brand = DB::table('sanphams')
+            -> join('nhasanxuats', 'nhasanxuats.manhasanxuat', '=', 'sanphams.manhasanxuat')         
+            -> where('sanphams.maloai', '=', $maloaihang)
+            -> select('*')
+            -> get();
+        return view('product.index',['sanpham'=> $sanpham, 'brand'=>$brand , 'min_price'=> $min_price, 'max_price'=> $max_price]); 
     }  
 
     public function detail($id)

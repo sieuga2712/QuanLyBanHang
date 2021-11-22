@@ -241,9 +241,11 @@ jQuery("#advertisement").owlCarousel({
 /*  LAZY LOAD IMAGES USING ECHO
 /*===================================================================================*/
 jQuery(function(){
+    var min = $('#min').text().split(' ')[0];
+    var max = $('#mã').text().split(' ')[0];
     echo.init({
-        offset: 100,
-        throttle: 250,
+        offset: min,
+        throttle: max,
         unload: false
     });
 });
@@ -262,18 +264,16 @@ jQuery(function(){
 jQuery(function () {
 
 // Price Slider
+var max_price = $('#max').text();
 if (jQuery('.price-slider').length > 0) {
     jQuery('.price-slider').slider({
-        min: 100,
-        max: 700,
+        min: 0,
+        max: max_price,
         step: 10,
-        value: [200, 500],
+        value: [1000, 2000],
         handle: "square"
-
     });
-
 }
-
 });
 
 

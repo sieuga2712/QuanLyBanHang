@@ -413,7 +413,7 @@ $list=\App\Models\sanpham::get_hang();
                           <div class="action">
                             <ul class="list-unstyled">
                               <li class="add-cart-button btn-group">
-                              <a onclick="addcart('{{$value->mahang}}')" href="javascript:">
+                              <a onclick="addcart('{{$value->mahang}}','{{$value->soluong}}')" href="javascript:">
                                 <button data-toggle="tooltip" class="btn btn-primary icon" type="button" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </button>
                                 <button class="btn btn-primary cart-btn" type="button">thêm vào giỏ</button>
                               </a>
