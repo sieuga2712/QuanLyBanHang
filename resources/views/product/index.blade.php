@@ -209,13 +209,15 @@
                         <div class="cart clearfix animate-effect">
                           <div class="action">
                             <ul class="list-unstyled">
+                              
                               <li class="add-cart-button btn-group">
+                                <a onclick="addcart('{{$value->mahang}}','{{$value->soluong}}')" href="javascript:">
                                 <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
                                 <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                                </a>
                               </li>
-                              <li class="lnk wishlist"> <a class="add-to-cart" href="{{$value->mahang . '-' . $value->id}}" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                              <li class="lnk"> <a class="add-to-cart" href="{{$value->mahang . '-' . $value->id}}" title="Compare"> <i class="fa fa-signal"></i> </a> </li>
-                            </ul>
+                              
+                              </ul>
                           </div>
                           <!-- /.action --> 
                         </div>

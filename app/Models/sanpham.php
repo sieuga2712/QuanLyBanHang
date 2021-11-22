@@ -50,7 +50,7 @@ class sanpham extends Model
        return $na;
     }
     public static function listsanpham($li,$maloaih){
-        $re=DB::select('select * from  sanphams where manhasanxuat=? and maloai="'.$maloaih.'"  limit 7;',[$li]);
+        $re=DB::select('select * from  sanphams where manhasanxuat=? and maloai="'.$maloaih.'"ORDER BY id DESC  limit 7;',[$li]);
         $na=array();
         foreach($re as $i){
             $na[]=$i->name;
@@ -61,6 +61,11 @@ class sanpham extends Model
         }*/
         
         return $re;
+    }
+    public static function sanphamhot(){
+        $re=DB::select('SELECT * FROM sanphams WHERE mahang in (select chitietdonhangs.sanpham from chitietdonhangs GROUP BY chitietdonhangs.sanpham ORDER by SUM(chitietdonhangs.soluong)
+        ) limit 10');
+         return $re;
     }
     public static function get_ListRelatedProduct($id, $count)
     {

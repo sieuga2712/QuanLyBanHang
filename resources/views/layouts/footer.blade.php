@@ -152,7 +152,7 @@
       $("#changcart").html(Response);
     });}
     else 
-      alert("mat hang nay hien dang het hang");
+      alert("mat hang nay hien dang het hang ");
   };
 
   function chuadangnhap() {
@@ -242,7 +242,7 @@
     return flag;
   };
 
-  function updateinput(id, number) {
+  function updateinput(id, number,sl) {
     if (!(+number.value === parseInt(number.value))) {
       alert("ban phai nhap so nguyen ");
       document.getElementById("sc_" + id).value = number.oldvalue;
@@ -251,8 +251,9 @@
       if (number.value <= 0) {
 
         document.getElementById("sc_" + id).value = 1;
-      } else if (number.value >= 1000) {
-        document.getElementById("sc_" + id).value = 999;
+      } else if (number.value > Number(sl)) {
+        document.getElementById("sc_" + id).value = Number(sl);
+        alert("mat hang nay hien chi con " + sl+" san pham");
 
       }
       $.ajax({

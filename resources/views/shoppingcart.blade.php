@@ -99,7 +99,7 @@
 											
 											<input type="number" id="sc_{{$pro['productinfo']->mahang}}" 
 											onfocus="this.oldvalue = this.value;"
-											onchange="updateinput('{{$pro['productinfo']->mahang}}',this);this.oldvalue = this.value;" 
+											onchange="updateinput('{{$pro['productinfo']->mahang}}',this,'{{$pro['productinfo']->soluong}}');this.oldvalue = this.value;" 
 											
 											href="javascript:" 
 											value="{{$pro['quanty']}}">

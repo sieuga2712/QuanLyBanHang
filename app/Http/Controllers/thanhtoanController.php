@@ -31,11 +31,14 @@ class thanhtoanController extends Controller
         $donhang->dia_chi=$dia;
         $donhang->save();
         $idct=$donhang->id;
-        $chitiet=new chitietdonhang;
-        $chitiet->iddonhang=$idct;
+        
+        
         foreach($request->session()->get("cart")->product as $pro){
+            $chitiet=new chitietdonhang;
+            $chitiet->iddonhang=$idct;
             $chitiet->sanpham=$pro['productinfo']->mahang;
             $chitiet->soluong=$pro['quanty'];
+            $sql = DB::update("UPDATE sanphams SET soluong=soluong-".$pro['quanty']." WHERE mahang='".$pro['productinfo']->mahang."'");
             $chitiet->giatien=$pro['price'];
             $chitiet->save();
 

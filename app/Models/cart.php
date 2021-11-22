@@ -28,12 +28,21 @@ class cart extends Model
 
             }
         }
-        $newproduct['quanty']++;
-        $newproduct['price']=$newproduct['quanty']*$pro->dongia;
-        $this->product[$id]=$newproduct;
-        $this->totalprice+=$pro->dongia;
-        $this->totalpro++;
+        if($newproduct['productinfo']->soluong<=$newproduct['quanty'])
+        {   
+            $mess="mat hang nay chi con ".$newproduct['productinfo']->soluong." san pham";
+            echo "<script type='text/javascript'>alert('$mess');</script>";
 
+        }
+        else
+        {
+            $newproduct['quanty']++;
+            $newproduct['price']=$newproduct['quanty']*$pro->dongia;
+        
+            $this->product[$id]=$newproduct;
+            $this->totalprice+=$pro->dongia;
+            $this->totalpro++;
+        }
         
     }
     public function deleteproduct($id){

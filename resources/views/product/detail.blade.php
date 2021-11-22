@@ -110,7 +110,7 @@
 
 									<div class="col-sm-7">
 										
-											<a onclick="addcart('{{$sanpham[0]->mahang}}')" href="javascript:" class="btn btn-primary">
+											<a onclick="addcart('{{$sanpham[0]->mahang}}','{{$sanpham[0]->soluong}}')" href="javascript:" class="btn btn-primary">
 											<i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART
 											</a>
 										
