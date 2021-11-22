@@ -93,7 +93,7 @@
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="/chi-tiet/{{$value->mahang}}"><img src="http://localhost:8000/{{$value->image}}" alt=""></a> </div>
+                          <div class="image"> <a href="/chi-tiet/{{$value->mahang}}"><img src="http://localhost:8000/{{$value->image}}" style=" height: 300px;" alt=""></a> </div>
                           <!-- /.image -->
                           
                           <div class="tag new"><span>new</span></div>
@@ -104,7 +104,7 @@
                           <h3 class="name"><a href="/chi-tiet/{{$value->mahang}}">{{$value->name}}</a></h3>
                           <div class="rating rateit-small"></div>
                           <div class="description"></div>
-                          <div class="product-price"> <span class="price"> {{$value->dongia}}</span> <span class="price-before-discount">$ 800</span> </div>
+                          <div class="product-price"> <span class="price"> {{$value->dongia}}</span>  </div>
                           <!-- /.product-price --> 
                           
                         </div>

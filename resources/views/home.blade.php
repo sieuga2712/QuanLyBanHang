@@ -121,7 +121,7 @@ $listhot=\App\Models\sanpham::sanphamhot();
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="/chi-tiet/{{$value->mahang}}"><img src="assets\\images\\sanpham\\{{$value->maloai}}\\{{$value->maloai}}_{{$value->manhasanxuat}}.png" alt=""></a> </div>
+                          <div class="image"> <a href="/chi-tiet/{{$value->mahang}}"><img src="assets\\images\\sanpham\\{{$value->maloai}}\\{{$value->maloai}}_{{$value->manhasanxuat}}.png" style=" height: 300px;" alt=""></a> </div>
                           <!-- /.image -->
 
                           <div class="tag new"><span>new</span></div>
@@ -181,7 +181,9 @@ $listhot=\App\Models\sanpham::sanphamhot();
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="/chi-tiet/{{$value->mahang}}"><img src="assets\\images\\sanpham\\{{$value->maloai}}\\{{$value->maloai}}_{{$value->manhasanxuat}}.png" alt=""></a> </div>
+                          <div class="image"> <a href="/chi-tiet/{{$value->mahang}}"><img src="assets\\images\\sanpham\\{{$value->maloai}}\\{{$value->maloai}}_{{$value->manhasanxuat}}.png" 
+                          style=" height: 300px;"
+                          alt=""></a> </div>
                           <!-- /.image -->
 
                           <div class="tag new"><span>new</span></div>
@@ -291,7 +293,7 @@ $list=\App\Models\sanpham::get_hang();
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="/chi-tiet/{{$value->mahang}}"><img src="assets\\images\\sanpham\\{{$value->maloai}}\\{{$value->maloai}}_{{$value->manhasanxuat}}.png" alt=""></a> </div>
+                          <div class="image"> <a href="/chi-tiet/{{$value->mahang}}"><img src="assets\\images\\sanpham\\{{$value->maloai}}\\{{$value->maloai}}_{{$value->manhasanxuat}}.png" style="height: 300px;" alt=""></a> </div>
                           <!-- /.image -->
 
                           <div class="tag new"><span>new</span></div>
@@ -353,7 +355,7 @@ $list=\App\Models\sanpham::get_hang();
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="/chi-tiet/{{$value->mahang}}"><img src="assets\\images\\sanpham\\{{$value->maloai}}\\{{$value->maloai}}_{{$value->manhasanxuat}}.png" alt=""></a> </div>
+                          <div class="image"> <a href="/chi-tiet/{{$value->mahang}}"><img src="assets\\images\\sanpham\\{{$value->maloai}}\\{{$value->maloai}}_{{$value->manhasanxuat}}.png" style="height: 300px;" alt=""></a> </div>
                           <!-- /.image -->
 
                           <div class="tag new"><span>new</span></div>
