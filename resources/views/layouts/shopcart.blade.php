@@ -36,15 +36,16 @@
 									@php
 
 									$che=\App\Http\Controllers\Auth\loginController::checklogin();
+									if($che==1)
 									$use=\App\Http\Controllers\Auth\loginController::userlogin();
 
 
 									@endphp
 									@if ($che==1)
-									<a href="/thanhtoan" class="btn btn-upper btn-primary pull-right outer-right-xs">mua hàng</a>
-									@else
-									<a onclick="chuadangnhap()" href="javascript:" class="btn btn-upper btn-primary pull-right outer-right-xs">mua hàng</a>
-									@endif
+												<a href="/thanhtoan" class="btn btn-upper btn-primary pull-right outer-right-xs">mua hàng</a>
+												@else
+												<a onclick="chuadangnhap()" href="javascript:" class="btn btn-upper btn-primary pull-right outer-right-xs">mua hàng</a>
+												@endif
 								</span>
 							</div><!-- /.shopping-cart-btn -->
 						</td>

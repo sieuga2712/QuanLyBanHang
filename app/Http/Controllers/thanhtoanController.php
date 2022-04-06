@@ -47,7 +47,7 @@ class thanhtoanController extends Controller
         $newcart= new cart($oldcart);
         $newcart->deletecart();
         $request->session()->forget('cart');
-        return redirect('home');
+         return redirect('home');
         
     }
 }

@@ -140,6 +140,7 @@
 <script src="http://localhost:8000/assets\js\wow.min.js"></script>
 <script src="http://localhost:8000/assets\js\scripts.js"></script>
 <script type="text/javascript">
+  //them san pham vao gio
   function addcart(id,sl) {
     if(Number(sl)>0){
     $.ajax({
@@ -154,9 +155,13 @@
     else 
       alert("mat hang nay hien dang het hang ");
   };
-
+  // yeu cau dang nhap truoc khi thanh toan
   function chuadangnhap() {
-    alert("ban chua dang nhap");
+     var result=confirm("ban chua dang nhap\ndi den trang dang nhap");
+     if(result==true){
+      $(location).attr('href', '{{ route('login') }}');
+    
+     }
   };
 
   function userdang(id) {
@@ -177,6 +182,7 @@
     });
   });
   //-------------------------------------------------------------
+
   $("#shoppingcart").on("click", ".remo i", function() {
 
     $.ajax({
@@ -200,30 +206,19 @@
     });
 
   });
+  
   //---------------------------------------------
-  $("#changcart").on("click", ".delete_product i", function() {
-
-
-    $.ajax({
-      url: '/delcart/' + $(this).data("id"),
-      type: 'GET',
-
-    }).done(function(Response) {
-
-      $("#changcart").empty();
-      $("#changcart").html(Response);
-    });
-  });
-
+  
   //---------------------------------------
 
   //----------------------------
 
   //----------------------------------------------
+  //lay gia tri dia chi, que quan va xoa het dau cach
   function getValue(id) {
     return document.getElementById(id).value.trim();
   }
-
+  // kiem tra nguoi dung da dien dien chi va que quan chua
   function kiemtra() {
     var flag = true;
     var que = getValue('quequan');
@@ -238,10 +233,12 @@
       flag = false;
     }
 
+    if(flag==true)
+    alert("dat hang thanh cong");
 
     return flag;
   };
-
+//thay doi so luong san pham trong gio hang
   function updateinput(id, number,sl) {
     if (!(+number.value === parseInt(number.value))) {
       alert("ban phai nhap so nguyen ");

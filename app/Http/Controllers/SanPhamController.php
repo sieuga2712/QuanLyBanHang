@@ -7,14 +7,17 @@ use Illuminate\Http\Request;
 use App\Models\sanpham;
 use App\Models\loaihang;
 use DB;
+
 class SanPhamController extends Controller
 {
-    public function view(){
+    public function view()
+    {
         //$this->themsanpham();
     }
-    public function upda(){
+    public function upda()
+    {
         $sanpham =  DB::select('select * from sanphams ');
-        $sanpham->dongia=$sanpham->dongia/1000000;
+        $sanpham->dongia = $sanpham->dongia / 1000000;
         $sanpham->save();
     }
     //
@@ -112,110 +115,113 @@ class SanPhamController extends Controller
                 $sanpham->save();
             }
         }
-            $na="apple watch";
+        $na = "apple watch";
+        for ($i = 5; $i < 15; $i++) {
+            $sanpham = new sanpham;
+            $ten = $na . " " . $i;
+            $sanpham->mahang = "SMW_AW_" . $i;
+            $sanpham->name = $na;
+            $sanpham->maloai = "SMW";
+            $sanpham->manhasanxuat = "apple";
+            $sanpham->dongia = rand(15, 30) * 1000000;
+            $sanpham->soluong = rand(20, 70);
+            $sanpham->mota = "apple watch  " . $i;
+            $sanpham->save();
+        }
+        $na = "samsung";
+        for ($i = 5; $i < 15; $i++) {
+            $sanpham = new sanpham;
+            $ten = $na . " " . $i;
+            $sanpham->mahang = "SMW_SSW_" . $i;
+            $sanpham->name = $na;
+            $sanpham->maloai = "SMW";
+            $sanpham->manhasanxuat = $na;
+            $sanpham->dongia = rand(15, 30) * 1000000;
+            $sanpham->soluong = rand(20, 70);
+            $sanpham->mota = "dong ho thong minh " . $na . " " . $i;
+            $sanpham->save();
+        }
+        $na = "xiaomi";
+        for ($i = 5; $i < 15; $i++) {
+            $sanpham = new sanpham;
+            $ten = $na . " " . $i;
+            $sanpham->mahang = "SMW_XMW_" . $i;
+            $sanpham->name = $na;
+            $sanpham->maloai = "SMW";
+            $sanpham->manhasanxuat = $na;
+            $sanpham->dongia = rand(15, 30) * 1000000;
+            $sanpham->soluong = rand(20, 70);
+            $sanpham->mota = "dong ho thong minh " . $na . " " . $i;
+            $sanpham->save();
+        }
+        $nam = array("accessories", "binoculars", "digital");
+        foreach ($nam as $n) {
             for ($i = 5; $i < 15; $i++) {
                 $sanpham = new sanpham;
                 $ten = $na . " " . $i;
-                $sanpham->mahang = "SMW_AW_" . $i;
-                $sanpham->name = $na;
-                $sanpham->maloai = "SMW";
-                $sanpham->manhasanxuat = "apple";
+                $sanpham->mahang = "CAM_" . $n . "_" . $i;
+                $sanpham->name = $ten;
+                $sanpham->maloai = "CAM";
+                $sanpham->manhasanxuat = $n;
                 $sanpham->dongia = rand(15, 30) * 1000000;
                 $sanpham->soluong = rand(20, 70);
-                $sanpham->mota = "apple watch  " . $i;
+                $sanpham->mota = "may anh " . $n . " " . $i;
                 $sanpham->save();
             }
-            $na="samsung";
-            for ($i = 5; $i < 15; $i++) {
-                $sanpham = new sanpham;
-                $ten = $na . " " . $i;
-                $sanpham->mahang = "SMW_SSW_" . $i;
-                $sanpham->name = $na;
-                $sanpham->maloai = "SMW";
-                $sanpham->manhasanxuat = $na;
-                $sanpham->dongia = rand(15, 30) * 1000000;
-                $sanpham->soluong = rand(20, 70);
-                $sanpham->mota = "dong ho thong minh ".$na." " . $i;
-                $sanpham->save();
-            }
-            $na="xiaomi";
-            for ($i = 5; $i < 15; $i++) {
-                $sanpham = new sanpham;
-                $ten = $na . " " . $i;
-                $sanpham->mahang = "SMW_XMW_" . $i;
-                $sanpham->name = $na;
-                $sanpham->maloai = "SMW";
-                $sanpham->manhasanxuat = $na;
-                $sanpham->dongia = rand(15, 30) * 1000000;
-                $sanpham->soluong = rand(20, 70);
-                $sanpham->mota = "dong ho thong minh ".$na." " . $i;
-                $sanpham->save();
-            }
-            $nam = array("accessories", "binoculars","digital");
-            foreach ($nam as $n) {
-                for ($i = 5; $i < 15; $i++) {
-                    $sanpham = new sanpham;
-                    $ten = $na . " " . $i;
-                    $sanpham->mahang = "CAM_" . $n . "_" . $i;
-                    $sanpham->name = $ten;
-                    $sanpham->maloai = "CAM";
-                    $sanpham->manhasanxuat = $n;
-                    $sanpham->dongia = rand(15, 30) * 1000000;
-                    $sanpham->soluong = rand(20, 70);
-                    $sanpham->mota = "may anh " . $n . " " . $i;
-                    $sanpham->save();
-                }
-            }
-        
+        }
     }
 
     public function index($maloaihang, $manhasanxuat)
-    {   $min_price = DB::select('SELECT MIN(sanphams.dongia)as "min_price"  FROM sanphams where  maloai=? and manhasanxuat =?',[$maloaihang,$manhasanxuat]) ;
-        $max_price = DB::select('SELECT MAX(sanphams.dongia)as "max_price"  FROM sanphams where  maloai=? and manhasanxuat =?',[$maloaihang,$manhasanxuat]) ;
-        $sanpham =  DB::select('select * from sanphams where  maloai=? and manhasanxuat =?',[$maloaihang,$manhasanxuat]);
+    {
+        $min_price = DB::select('SELECT MIN(sanphams.dongia)as "min_price"  FROM sanphams where  maloai=? and manhasanxuat =?', [$maloaihang, $manhasanxuat]);
+        $max_price = DB::select('SELECT MAX(sanphams.dongia)as "max_price"  FROM sanphams where  maloai=? and manhasanxuat =?', [$maloaihang, $manhasanxuat]);
+        $sanpham = DB::table('sanphams')->where(['maloai' => $maloaihang, 'manhasanxuat' => $manhasanxuat])->paginate(9);
         $brand = DB::table('sanphams')
-            -> join('nhasanxuats', 'nhasanxuats.manhasanxuat', '=', 'sanphams.manhasanxuat')         
-            -> where('sanphams.maloai', '=', $maloaihang)
-            -> select('*')
-            -> get();
-        return view('product.index',['sanpham'=> $sanpham, 'brand'=>$brand , 'min_price'=> $min_price, 'max_price'=> $max_price]);
-    }  
+            ->join('nhasanxuats', 'nhasanxuats.manhasanxuat', '=', 'sanphams.manhasanxuat')
+            ->where('sanphams.maloai', '=', $maloaihang)
+            ->select('*')
+            ->get();
+        return view('product.index', ['sanpham' => $sanpham, 'brand' => $brand, 'min_price' => $min_price, 'max_price' => $max_price]);
+    }
     public function indexs($maloaihang)
     {
-        $min_price = DB::select('SELECT MIN(sanphams.dongia)as "min_price"  FROM sanphams where  maloai=?',[$maloaihang]) ;
-        $max_price = DB::select('SELECT MAX(sanphams.dongia)as "max_price"  FROM sanphams where  maloai=?',[$maloaihang]) ;
-        $sanpham = DB::select('select * from sanphams where  maloai=?',[$maloaihang]);
+        $min_price = DB::select('SELECT MIN(sanphams.dongia)as "min_price"  FROM sanphams where  maloai=?', [$maloaihang]);
+        $max_price = DB::select('SELECT MAX(sanphams.dongia)as "max_price"  FROM sanphams where  maloai=?', [$maloaihang]);
+        $sanpham = DB::table('sanphams')->where(['maloai' => $maloaihang])->paginate(9);
+
         $brand = DB::table('sanphams')
-            -> join('nhasanxuats', 'nhasanxuats.manhasanxuat', '=', 'sanphams.manhasanxuat')         
-            -> where('sanphams.maloai', '=', $maloaihang)
-            -> select('*')
-            -> get();
-        return view('product.index',['sanpham'=> $sanpham, 'brand'=>$brand , 'min_price'=> $min_price, 'max_price'=> $max_price]); 
-    }  
+            ->join('nhasanxuats', 'nhasanxuats.manhasanxuat', '=', 'sanphams.manhasanxuat')
+            ->where('sanphams.maloai', '=', $maloaihang)
+            ->select('*')
+            ->get();
+        return view('product.index', ['sanpham' => $sanpham, 'brand' => $brand, 'min_price' => $min_price, 'max_price' => $max_price]);
+    }
 
     public function detail($id)
-    {   $sanpham = DB::select('select * from sanphams where  mahang=?',[$id]);
-        $ListRelatedProduct =\App\Models\sanpham::get_ListRelatedProduct($id,7); 
-        return view('product.detail',['sanpham'=> $sanpham, 'ListRelatedProduct'=> $ListRelatedProduct]);     
-    } 
-       
+    {
+        $sanpham = DB::select('select * from sanphams where  mahang=?', [$id]);
+        $ListRelatedProduct = \App\Models\sanpham::get_ListRelatedProduct($id, 7);
+        return view('product.detail', ['sanpham' => $sanpham, 'ListRelatedProduct' => $ListRelatedProduct]);
+    }
+
+
     public function search($inf)
-    {      
+    {
         $sanpham = DB::table('sanphams')
-                    -> leftJoin('loaihangs', 'loaihangs.maloaihang', '=', 'sanphams.maloai')
-                    -> leftJoin('nhasanxuats', 'nhasanxuats.manhasanxuat', '=', 'sanphams.manhasanxuat')
-                    -> where('sanphams.manhasanxuat', '=', $inf)
-                    -> orWhere('sanphams.name', '=', $inf)
-                    -> orWhere('loaihangs.tenloaihang', '=', $inf)
-                    -> select('*')
-                    -> get();
-        return view('product.search',['sanpham'=> $sanpham]);
-    }  
+            ->leftJoin('loaihangs', 'loaihangs.maloaihang', '=', 'sanphams.maloai')
+            ->leftJoin('nhasanxuats', 'nhasanxuats.manhasanxuat', '=', 'sanphams.manhasanxuat')
+            ->where('sanphams.manhasanxuat', '=', $inf)
+            ->orWhere('sanphams.name', '=', $inf)
+            ->orWhere('loaihangs.tenloaihang', '=', $inf)
+            ->paginate(12);
+        return view('product.search', ['sanpham' => $sanpham]);
+    }
+
 
     public function fillter_price($min, $max)
     {
-       $sanpham = DB::select('select * from sanphams where sanphams.dongia between ? and ?', [$min, $max]); 
-       //$sanpham = DB::select('select * from sanphams where sanphams.dongia between ? and ? and  maloai=? and manhasanxuat =?', [$maloaihang,$manhasanxuat,$min, $max]); 
-         return view('Layouts/products',['sanpham'=> $sanpham]);  
+        $sanpham = DB::select('select * from sanphams where sanphams.dongia between ? and ?', [$min, $max]);
+        //$sanpham = DB::select('select * from sanphams where sanphams.dongia between ? and ? and  maloai=? and manhasanxuat =?', [$maloaihang,$manhasanxuat,$min, $max]); 
+        return view('Layouts/products', ['sanpham' => $sanpham]);
     }
 }

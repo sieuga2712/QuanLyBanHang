@@ -118,19 +118,19 @@ $listhot=\App\Models\sanpham::sanphamhot();
                   
                   @foreach($listhot as $value)
                   <div class="item item-carousel">
-                    <div class="products">
+                    <div class="products" >
                       <div class="product">
-                        <div class="product-image">
-                          <div class="image"> <a href="/chi-tiet/{{$value->mahang}}"><img src="assets\\images\\sanpham\\{{$value->maloai}}\\{{$value->maloai}}_{{$value->manhasanxuat}}.png" style=" height: 300px;" alt=""></a> </div>
+                        <div class="product-image" >
+                          <div class="image"> <a href="/chi-tiet/{{$value->mahang}}"><img src="assets\\images\\sanpham\\{{$value->maloai}}\\{{$value->maloai}}_{{$value->manhasanxuat}}.png" style=" height: 300px; " alt=""></a> </div>
                           <!-- /.image -->
 
-                          <div class="tag new"><span>new</span></div>
+                          <div class="tag new" style="background-color: red;"><span>HOT</span></div>
                         </div>
                         <!-- /.product-image -->
 
                         <div class="product-info text-left">
                           <h3 class="name"><a href="/chi-tiet/{{$value->mahang}}">{{$value->mahang}}</a></h3>
-                          <div class="rating rateit-small"></div>
+                          
                           <div class="description"></div>
                           <div class="product-price"> <span class="price"> {{$value->dongia}} đồng </span> </div>
                           <!-- /.product-price -->
@@ -186,7 +186,7 @@ $listhot=\App\Models\sanpham::sanphamhot();
                           alt=""></a> </div>
                           <!-- /.image -->
 
-                          <div class="tag new"><span>new</span></div>
+                          <div class="tag new" style="background-color: red;" ><span>HOT</span></div>
                         </div>
                         <!-- /.product-image -->
 
@@ -250,7 +250,7 @@ $listhot=\App\Models\sanpham::sanphamhot();
         <!-- ============================================== END: BEST SELLER ============================================== -->
 
         <!-- ============================================== SCROLL TABS ============================================== -->
-        @php
+@php
 
 $info=\App\Models\sanpham::get_loaihang();
 $list=\App\Models\sanpham::get_hang();
